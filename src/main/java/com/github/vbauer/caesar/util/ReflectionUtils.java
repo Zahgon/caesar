@@ -9,81 +9,40 @@ import java.util.List;
 /**
  * @author Vladislav Bauer
  */
-
 @SuppressWarnings("unchecked")
 public final class ReflectionUtils {
 
     public static final String PACKAGE_SEPARATOR = ".";
-    
 
     private ReflectionUtils() {
         throw new UnsupportedOperationException();
     }
 
-
     public static <T> Class<T> getClassWithoutProxies(final Object object) {
-        try {
-            // XXX: Use HibernateProxyHelper to un-proxy object and get the original class.
-            return (Class<T>) Class.forName("org.hibernate.proxy.HibernateProxyHelper")
-                .getDeclaredMethod("getClassWithoutInitializingProxy", Object.class)
-                .invoke(null, object);
-        } catch (final Exception ex) {
-            return getClassSafe(object);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static <T> Class<T> getClassSafe(final Object object) {
-        return object != null ? (Class<T>) object.getClass() : null;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static <T> T createObject(final String className) {
-        try {
-            final Class<?> clazz = Class.forName(className);
-            return (T) clazz.newInstance();
-        } catch (final Throwable ex) {
-            return null;
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static <T> Collection<T> createObjects(final Collection<String> classNames) {
-        final List<T> objects = new ArrayList<>();
-        for (final String className : classNames) {
-            final T object = createObject(className);
-            if (object != null) {
-                objects.add(object);
-            }
-        }
-        return objects;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     public static Collection<String> classNames(final String packageName, final Collection<String> classNames) {
-        final List<String> result = new ArrayList<>();
-        for (final String className : classNames) {
-            result.add(packageName + PACKAGE_SEPARATOR + className);
-        }
-        return result;        
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public static Method findDeclaredMethod(
-        final Class<?> objectClass, final String methodName, final Class<?>[] parameterTypes
-    ) {
-        try {
-            return objectClass.getDeclaredMethod(methodName, parameterTypes);
-        } catch (final Throwable ignored) {
-            return null;
-        }
+    public static Method findDeclaredMethod(final Class<?> objectClass, final String methodName, final Class<?>[] parameterTypes) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public static <T extends Annotation> T findAnnotationFromMethodOrClass(
-        final Method method, final Class<T> annotationClass
-    ) {
-        final T annotation = method.getAnnotation(annotationClass);
-        if (annotation != null) {
-            return annotation;
-        }
-
-        final Class<?> originClass = method.getDeclaringClass();
-        return originClass.getAnnotation(annotationClass);
+    public static <T extends Annotation> T findAnnotationFromMethodOrClass(final Method method, final Class<T> annotationClass) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

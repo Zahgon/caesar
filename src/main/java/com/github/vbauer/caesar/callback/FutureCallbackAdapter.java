@@ -8,7 +8,6 @@ import com.google.common.util.concurrent.FutureCallback;
  * @param <T> type of result
  * @author Vladislav Bauer
  */
-
 public class FutureCallbackAdapter<T> implements FutureCallback<T> {
 
     /**
@@ -16,7 +15,7 @@ public class FutureCallbackAdapter<T> implements FutureCallback<T> {
      */
     @Override
     public void onSuccess(final T result) {
-        // Do nothing.
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -24,7 +23,6 @@ public class FutureCallbackAdapter<T> implements FutureCallback<T> {
      */
     @Override
     public void onFailure(final Throwable t) {
-        // Do nothing.
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

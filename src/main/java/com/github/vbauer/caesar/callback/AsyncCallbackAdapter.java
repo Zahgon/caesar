@@ -6,7 +6,6 @@ package com.github.vbauer.caesar.callback;
  * @param <T> type of result
  * @author Vladislav Bauer
  */
-
 public class AsyncCallbackAdapter<T> implements AsyncCallback<T> {
 
     /**
@@ -14,7 +13,7 @@ public class AsyncCallbackAdapter<T> implements AsyncCallback<T> {
      */
     @Override
     public void onSuccess(final T result) {
-        // Do nothing.
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -22,7 +21,6 @@ public class AsyncCallbackAdapter<T> implements AsyncCallback<T> {
      */
     @Override
     public void onFailure(final Throwable caught) {
-        // Do nothing.
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

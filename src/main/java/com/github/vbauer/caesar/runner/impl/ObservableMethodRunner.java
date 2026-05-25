@@ -2,14 +2,12 @@ package com.github.vbauer.caesar.runner.impl;
 
 import com.github.vbauer.caesar.runner.impl.base.AbstractReturnMethodRunner;
 import rx.Observable;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
 /**
- * @author Vladislav Bauer 
+ * @author Vladislav Bauer
  */
-
 @SuppressWarnings("all")
 public class ObservableMethodRunner extends AbstractReturnMethodRunner {
 
@@ -18,7 +16,7 @@ public class ObservableMethodRunner extends AbstractReturnMethodRunner {
      */
     @Override
     public Object processResultFuture(final Future<?> future, final ExecutorService executor) {
-        return Observable.from(future);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -26,7 +24,6 @@ public class ObservableMethodRunner extends AbstractReturnMethodRunner {
      */
     @Override
     protected Class<?> getReturnClass(final Class<?> originReturnType) {
-        return Observable.class;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }
